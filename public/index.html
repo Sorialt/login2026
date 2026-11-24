@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>Welcome | Account</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="card" aria-labelledby="page-title">
+        <div class="brand-mark" aria-hidden="true">L</div>
+        <p class="eyebrow">YOUR SPACE, YOUR WAY</p>
+        <h1 id="page-title">Welcome back</h1>
+        <p class="intro">Sign in to your account or create a new one.</p>
+
+        <div class="tabs" role="tablist" aria-label="Account options">
+          <button class="tab active" id="login-tab" type="button" role="tab"
+            aria-selected="true" aria-controls="account-form" data-mode="login">Sign in</button>
+          <button class="tab" id="signup-tab" type="button" role="tab"
+            aria-selected="false" aria-controls="account-form" data-mode="signup">Create account</button>
+        </div>
+
+        <div id="account-view">
+          <form id="account-form">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" autocomplete="username"
+              minlength="3" maxlength="24" pattern="[a-zA-Z0-9_]+" required>
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password"
+              autocomplete="current-password" minlength="8" maxlength="128" required>
+            <p class="field-hint" id="password-hint" hidden>Use 8–128 characters.</p>
+
+            <p class="message" id="message" role="status" aria-live="polite"></p>
+            <button class="submit-button" id="submit-button" type="submit">Sign in</button>
+          </form>
+          <p class="privacy-note">Your account is stored securely on this server.</p>
+        </div>
+
+        <div id="signed-in-view" hidden>
+          <p class="signed-in-copy">You’re signed in as <strong id="signed-in-name"></strong>.</p>
+          <button class="submit-button secondary-button" id="logout-button" type="button">Sign out</button>
+        </div>
+      </section>
+      <footer>Simple, secure account access</footer>
+    </main>
+  </body>
+</html>
